@@ -1,0 +1,31 @@
+{% extends 'inicio.html' %}
+
+{% block contenidoQueCambia %}
+    <h1>Arriendos Realizados</h1>
+    <table>
+        <tr>
+            <th>RUT</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Email</th>
+            <th>Tipo de Vehículo</th>
+            <th>Marca</th>
+            <th>Patente</th>
+            <th>Fecha de Inicio</th>
+            <th>Fecha de Fin</th>
+        </tr>
+        {% for arriendo in arriendos_context %}
+        <tr>
+            <td>{{ arriendo.rut }}</td>
+            <td>{{ arriendo.nombre }}</td>
+            <td>{{ arriendo.apellido }}</td>
+            <td>{{ arriendo.email }}</td>
+            <td>{{ arriendo.tipo }}</td>
+            <td>{{ arriendo.marca }}</td>
+            <td>{{ arriendo.patente }}</td>
+            <td>{{ arriendo.f_inicio }}</td>
+            <td>{{ arriendo.f_fin }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endblock contenidoQueCambia %}

@@ -1,0 +1,10 @@
+{% extends 'inicio.html' %}
+
+{% block contenidoQueCambia %}
+    <h3>Arrendar Vehiculo</h3>
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form_arriendo.as_p }}
+        <button type="submit">Arrendar</button>
+    </form>
+{% endblock contenidoQueCambia %}

@@ -1,0 +1,33 @@
+{% extends 'inicio.html' %}
+
+{% block contenidoQueCambia %}
+<h3> Listar Clientes</h3>
+<table id="" style="border-color: black;">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>RUT</th>
+            <th>Email</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% if clientes_context %}
+            {% for c in clientes_context %}
+                <tr>
+                    <td>{{ c.id }}</td>
+                    <td>{{ c.nombre }}</td>
+                    <td>{{ c.apellido }}</td>
+                    <td>{{ c.rut }}</td>
+                    <td>{{ c.email }}</td>
+                </tr>
+            {% endfor %}
+        {% else %}
+            <tr>
+                <td colspan="5">No hay registros de clientes</td>
+            </tr>
+        {% endif %}
+    </tbody>
+</table>
+{% endblock contenidoQueCambia %}

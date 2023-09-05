@@ -1,0 +1,10 @@
+{% extends 'inicio.html' %}
+
+{% block contenidoQueCambia %}
+    <h2>Formulario Vehiculos</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form_agregar.as_p }}
+        <button type="submit">Agregar</button>
+    </form>
+{% endblock contenidoQueCambia %}
